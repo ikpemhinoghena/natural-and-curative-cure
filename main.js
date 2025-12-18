@@ -226,7 +226,7 @@ class ShoppingCart {
     updateCartDisplay() {
         const cartCount = document.getElementById('cart-count');
         const cartTotal = document.getElementById('cart-total');
-        
+
         if (cartCount) {
             const count = this.getItemCount();
             cartCount.textContent = count;
@@ -245,7 +245,19 @@ class ShoppingCart {
         if (!cartItems) return;
 
         if (this.items.length === 0) {
-            cartItems.innerHTML = '<p class="text-gray-500 text-center py-8">Your cart is empty</p>';
+            cartItems.innerHTML = `
+                <div class="text-center py-12">
+                    <div class="mb-6">
+                        <i class="fas fa-shopping-cart text-5xl text-gray-300 mb-4"></i>
+                        <h3 class="text-xl font-bold text-gray-700 mb-2">Your cart is empty</h3>
+                        <p class="text-gray-500 mb-6">Looks like you haven't added any items to your cart yet</p>
+                    </div>
+                    <a href="shop.html" 
+                       class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 font-bold">
+                        Start Shopping
+                    </a>
+                </div>
+            `;
             return;
         }
 
@@ -309,13 +321,13 @@ class ShoppingCart {
 
         const orderSummary = this.generateOrderSummary();
         const whatsappMessage = encodeURIComponent(orderSummary);
-        const whatsappUrl = `https://wa.me/1234567890?text=${whatsappMessage}`;
-        
+        const whatsappUrl = `https://wa.me/2348163807836?text=${whatsappMessage}`;
+
         window.open(whatsappUrl, '_blank');
     }
 
     generateOrderSummary() {
-        const items = this.items.map(item => 
+        const items = this.items.map(item =>
             `• ${item.name} - $${item.price} x ${item.quantity} = $${(item.price * item.quantity).toFixed(2)}`
         ).join('\n');
 
@@ -352,14 +364,14 @@ class ProductFilter {
 
         // Category filter
         if (this.currentFilters.category !== 'all') {
-            filtered = filtered.filter(product => 
+            filtered = filtered.filter(product =>
                 product.category === this.currentFilters.category
             );
         }
 
         // Condition filter
         if (this.currentFilters.condition !== 'all') {
-            filtered = filtered.filter(product => 
+            filtered = filtered.filter(product =>
                 product.condition.includes(this.currentFilters.condition)
             );
         }
@@ -367,7 +379,7 @@ class ProductFilter {
         // Price range filter
         if (this.currentFilters.priceRange !== 'all') {
             const [min, max] = this.currentFilters.priceRange.split('-').map(p => parseFloat(p));
-            filtered = filtered.filter(product => 
+            filtered = filtered.filter(product =>
                 product.price >= min && (max ? product.price <= max : true)
             );
         }
@@ -383,7 +395,7 @@ class ProductFilter {
     renderProducts() {
         const filteredProducts = this.filterProducts();
         const container = document.getElementById('products-grid');
-        
+
         if (!container) return;
 
         if (filteredProducts.length === 0) {
@@ -403,7 +415,7 @@ class ProductFilter {
 
     createProductCard(product) {
         const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
-        
+
         return `
             <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 product-card" data-product-id="${product.id}">
                 <div class="relative">
@@ -482,7 +494,7 @@ class ProductFilter {
             condition: 'all',
             priceRange: 'all'
         };
-        
+
         // Reset form inputs
         const searchInput = document.getElementById('search-input');
         const categorySelect = document.getElementById('category-select');
@@ -543,9 +555,9 @@ function showProductDetails(productId) {
                 <div class="mb-6">
                     <h3 class="font-bold mb-2">Treats:</h3>
                     <div class="flex flex-wrap gap-2">
-                        ${product.condition.map(condition => 
-                            `<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">${condition}</span>`
-                        ).join('')}
+                        ${product.condition.map(condition =>
+        `<span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">${condition}</span>`
+    ).join('')}
                     </div>
                 </div>
 
@@ -632,7 +644,7 @@ function initScrollAnimations() {
 }
 
 // Event Listeners
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize animations
     initAnimations();
 
@@ -664,7 +676,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cart panel toggle
     const cartToggle = document.getElementById('cart-toggle');
     const cartPanel = document.getElementById('cart-panel');
-    
+
     if (cartToggle && cartPanel) {
         cartToggle.addEventListener('click', () => {
             cartPanel.classList.toggle('translate-x-full');
@@ -692,7 +704,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    
+
     if (mobileMenuToggle && mobileMenu) {
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
@@ -714,3 +726,41 @@ window.cart = cart;
 window.productFilter = productFilter;
 window.showProductDetails = showProductDetails;
 window.closeProductModal = closeProductModal;
+
+// Flash Sale Countdown Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const countdownElement = document.getElementById('countdown');
+    if (!countdownElement) return;
+
+    // Target Date: January 1st of the next year
+    const currentYear = new Date().getFullYear();
+    const targetDate = new Date(`January 1, ${currentYear + 1} 00:00:00`).getTime();
+
+    function updateTimer() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+            // Optional: Handle expired timer
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minsEl = document.getElementById('minutes');
+        const secsEl = document.getElementById('seconds');
+
+        if (daysEl) daysEl.innerText = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.innerText = String(hours).padStart(2, '0');
+        if (minsEl) minsEl.innerText = String(minutes).padStart(2, '0');
+        if (secsEl) secsEl.innerText = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer(); // Initial call
+});

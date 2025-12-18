@@ -1,183 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Natural & Curative Cure | Trusted Herbal Remedies</title>
-    <meta name="description" content="Learn about our 25+ year journey in natural healing. Discover our mission, certifications, and commitment to providing premium herbal remedies.">
-    
+    <meta name="description"
+        content="Learn about our 25+ year journey in natural healing. Discover our mission, certifications, and commitment to providing premium herbal remedies.">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
-    
-    <style>
-        :root {
-            --forest-green: #2D5016;
-            --sage-green: #87A96B;
-            --warm-white: #FEFEFE;
-            --golden-amber: #D4A574;
-            --terracotta: #C65D07;
-            --deep-charcoal: #2C2C2C;
-            --soft-cream: #F8F6F0;
-            --muted-gold: #E6C79C;
-        }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--soft-cream);
-            color: var(--deep-charcoal);
-        }
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/about.css" rel="stylesheet">
 
-        .font-playfair {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .font-crimson {
-            font-family: 'Crimson Text', serif;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--forest-green), var(--golden-amber));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(45, 80, 22, 0.9), rgba(135, 169, 107, 0.7)), 
-                        url('resources/hero-herbs.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .trust-badge {
-            background: linear-gradient(135deg, var(--golden-amber), var(--muted-gold));
-            color: var(--deep-charcoal);
-            border-radius: 50px;
-            padding: 8px 16px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
-        }
-
-        .cart-badge {
-            background: var(--terracotta);
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-            position: absolute;
-            top: -8px;
-            right: -8px;
-        }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--golden-amber);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--golden-amber);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .stats-counter {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--forest-green);
-        }
-
-        .certification-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .certification-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .process-step {
-            position: relative;
-        }
-
-        .process-step::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -20px;
-            width: 40px;
-            height: 2px;
-            background: var(--sage-green);
-            transform: translateY(-50%);
-        }
-
-        .process-step:last-child::after {
-            display: none;
-        }
-
-        .team-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .team-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
@@ -201,14 +55,14 @@
                 <!-- Cart and Search -->
                 <div class="flex items-center space-x-4">
                     <div class="relative">
-                        <input type="text" placeholder="Search remedies..." 
-                               class="hidden md:block w-64 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <input type="text" placeholder="Search remedies..."
+                            class="hidden md:block w-64 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
                     </div>
                     <button id="cart-toggle" class="relative p-2 text-gray-700 hover:text-green-600">
                         <i class="fas fa-shopping-cart text-xl"></i>
                         <span id="cart-count" class="cart-badge hidden">0</span>
                     </button>
-                    
+
                     <!-- Mobile menu button -->
                     <button id="mobile-menu-toggle" class="md:hidden p-2 text-gray-700">
                         <i class="fas fa-bars text-xl"></i>
@@ -238,16 +92,17 @@
                         25+ Years of Excellence
                     </div>
                 </div>
-                
+
                 <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-6 leading-tight">
                     Our Story of <span class="text-yellow-400">Natural Healing</span>
                 </h1>
-                
+
                 <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
-                    From humble beginnings rooted in traditional wisdom to becoming a trusted leader in natural remedies, 
+                    From humble beginnings rooted in traditional wisdom to becoming a trusted leader in natural
+                    remedies,
                     our journey has been dedicated to one mission: helping people heal naturally.
                 </p>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
                     <div class="text-center">
                         <div class="stats-counter text-yellow-400 mb-2">
@@ -281,22 +136,26 @@
                         Our Mission & Vision
                     </h2>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        Founded in 1998 by Dr. Maria Santos, a renowned herbalist with over three decades of experience, 
-                        Natural & Curative Cure began as a small clinic in the heart of the Amazon rainforest. 
-                        Dr. Santos witnessed firsthand the incredible healing power of traditional herbs and was determined 
+                        Founded in 1998 by Oshokha Timothy, a renowned herbalist with over three decades of experience,
+                        Natural & Curative Cure began as a small clinic in the heart of the Amazon rainforest.
+                        Oshokha Timothy witnessed firsthand the incredible healing power of traditional herbs and was
+                        determined
                         to bring this ancient wisdom to the modern world.
                     </p>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        Today, we stand as a bridge between traditional healing practices and modern scientific validation. 
-                        Our team of herbalists, researchers, and health experts work tirelessly to ensure that every product 
+                        Today, we stand as a bridge between traditional healing practices and modern scientific
+                        validation.
+                        Our team of herbalists, researchers, and health experts work tirelessly to ensure that every
+                        product
                         we offer meets the highest standards of quality, purity, and effectiveness.
                     </p>
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        We believe that nature provides everything we need for optimal health and wellness. Our mission is 
-                        to make these natural healing solutions accessible to everyone, while preserving the traditional 
+                        We believe that nature provides everything we need for optimal health and wellness. Our mission
+                        is
+                        to make these natural healing solutions accessible to everyone, while preserving the traditional
                         knowledge that has been passed down through generations.
                     </p>
-                    
+
                     <div class="grid grid-cols-2 gap-6">
                         <div class="text-center p-4 bg-green-50 rounded-lg">
                             <i class="fas fa-leaf text-3xl text-green-600 mb-2"></i>
@@ -314,49 +173,55 @@
                 <div class="scroll-animate">
                     <div class="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8">
                         <h3 class="text-2xl font-bold mb-6 text-center">Our Core Values</h3>
-                        
+
                         <div class="space-y-6">
                             <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-heart text-green-600 text-xl"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-lg mb-2">Integrity</h4>
-                                    <p class="text-gray-600">We maintain the highest ethical standards in sourcing, 
-                                    manufacturing, and customer service. Transparency is at the heart of everything we do.</p>
+                                    <p class="text-gray-600">We maintain the highest ethical standards in sourcing,
+                                        manufacturing, and customer service. Transparency is at the heart of everything
+                                        we do.</p>
                                 </div>
                             </div>
 
                             <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-users text-blue-600 text-xl"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-lg mb-2">Customer Focus</h4>
-                                    <p class="text-gray-600">Your health and satisfaction are our top priorities. 
-                                    We provide personalized support and stand behind every product with our guarantee.</p>
+                                    <p class="text-gray-600">Your health and satisfaction are our top priorities.
+                                        We provide personalized support and stand behind every product with our
+                                        guarantee.</p>
                                 </div>
                             </div>
 
                             <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-seedling text-purple-600 text-xl"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-lg mb-2">Sustainability</h4>
-                                    <p class="text-gray-600">We're committed to sustainable practices that protect 
-                                    our planet and ensure the longevity of traditional healing wisdom.</p>
+                                    <p class="text-gray-600">We're committed to sustainable practices that protect
+                                        our planet and ensure the longevity of traditional healing wisdom.</p>
                                 </div>
                             </div>
 
                             <div class="flex items-start space-x-4">
-                                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-graduation-cap text-yellow-600 text-xl"></i>
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-lg mb-2">Education</h4>
-                                    <p class="text-gray-600">We believe knowledge is power. We provide comprehensive 
-                                    education about herbs, their benefits, and safe usage practices.</p>
+                                    <p class="text-gray-600">We believe knowledge is power. We provide comprehensive
+                                        education about herbs, their benefits, and safe usage practices.</p>
                                 </div>
                             </div>
                         </div>
@@ -374,7 +239,8 @@
                     Certifications & Quality Assurance
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our commitment to quality is reflected in our comprehensive certifications and rigorous testing protocols.
+                    Our commitment to quality is reflected in our comprehensive certifications and rigorous testing
+                    protocols.
                 </p>
             </div>
 
@@ -384,7 +250,8 @@
                         <i class="fas fa-certificate text-green-600 text-2xl"></i>
                     </div>
                     <h3 class="font-bold text-lg mb-2">USDA Organic</h3>
-                    <p class="text-gray-600 text-sm">All our herbs are certified organic, ensuring they're grown without synthetic pesticides or fertilizers.</p>
+                    <p class="text-gray-600 text-sm">All our herbs are certified organic, ensuring they're grown without
+                        synthetic pesticides or fertilizers.</p>
                 </div>
 
                 <div class="certification-card rounded-2xl p-6 text-center scroll-animate">
@@ -392,7 +259,8 @@
                         <i class="fas fa-microscope text-blue-600 text-2xl"></i>
                     </div>
                     <h3 class="font-bold text-lg mb-2">FDA Registered</h3>
-                    <p class="text-gray-600 text-sm">Our facility is FDA registered and follows Good Manufacturing Practices (GMP).</p>
+                    <p class="text-gray-600 text-sm">Our facility is FDA registered and follows Good Manufacturing
+                        Practices (GMP).</p>
                 </div>
 
                 <div class="certification-card rounded-2xl p-6 text-center scroll-animate">
@@ -400,7 +268,8 @@
                         <i class="fas fa-leaf text-purple-600 text-2xl"></i>
                     </div>
                     <h3 class="font-bold text-lg mb-2">Traditional Medicine</h3>
-                    <p class="text-gray-600 text-sm">Certified by traditional medicine boards in multiple countries for authentic herbal practices.</p>
+                    <p class="text-gray-600 text-sm">Certified by traditional medicine boards in multiple countries for
+                        authentic herbal practices.</p>
                 </div>
 
                 <div class="certification-card rounded-2xl p-6 text-center scroll-animate">
@@ -408,21 +277,23 @@
                         <i class="fas fa-shield-alt text-yellow-600 text-2xl"></i>
                     </div>
                     <h3 class="font-bold text-lg mb-2">Third-Party Tested</h3>
-                    <p class="text-gray-600 text-sm">Every batch is independently tested for purity, potency, and contaminants.</p>
+                    <p class="text-gray-600 text-sm">Every batch is independently tested for purity, potency, and
+                        contaminants.</p>
                 </div>
             </div>
 
             <!-- Quality Process -->
             <div class="bg-white rounded-2xl p-8 scroll-animate">
                 <h3 class="text-2xl font-bold text-center mb-8">Our Quality Process</h3>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div class="process-step text-center">
                         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-search text-green-600 text-xl"></i>
                         </div>
                         <h4 class="font-bold mb-2">Source Selection</h4>
-                        <p class="text-gray-600 text-sm">We partner with trusted growers who share our commitment to quality and sustainability.</p>
+                        <p class="text-gray-600 text-sm">We partner with trusted growers who share our commitment to
+                            quality and sustainability.</p>
                     </div>
 
                     <div class="process-step text-center">
@@ -430,7 +301,8 @@
                             <i class="fas fa-vial text-blue-600 text-xl"></i>
                         </div>
                         <h4 class="font-bold mb-2">Laboratory Testing</h4>
-                        <p class="text-gray-600 text-sm">Comprehensive testing for identity, purity, heavy metals, and microbial contamination.</p>
+                        <p class="text-gray-600 text-sm">Comprehensive testing for identity, purity, heavy metals, and
+                            microbial contamination.</p>
                     </div>
 
                     <div class="process-step text-center">
@@ -438,7 +310,8 @@
                             <i class="fas fa-cogs text-purple-600 text-xl"></i>
                         </div>
                         <h4 class="font-bold mb-2">Processing</h4>
-                        <p class="text-gray-600 text-sm">Gentle processing methods that preserve the natural potency and bioactivity of herbs.</p>
+                        <p class="text-gray-600 text-sm">Gentle processing methods that preserve the natural potency and
+                            bioactivity of herbs.</p>
                     </div>
 
                     <div class="process-step text-center">
@@ -446,7 +319,8 @@
                             <i class="fas fa-box text-yellow-600 text-xl"></i>
                         </div>
                         <h4 class="font-bold mb-2">Packaging</h4>
-                        <p class="text-gray-600 text-sm">Eco-friendly packaging that protects product integrity and extends shelf life.</p>
+                        <p class="text-gray-600 text-sm">Eco-friendly packaging that protects product integrity and
+                            extends shelf life.</p>
                     </div>
                 </div>
             </div>
@@ -461,21 +335,22 @@
                     Meet Our Expert Team
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our team combines traditional wisdom with modern scientific expertise to bring you 
+                    Our team combines traditional wisdom with modern scientific expertise to bring you
                     the highest quality natural remedies.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="team-card rounded-2xl p-6 text-center scroll-animate">
-                    <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-white font-bold text-2xl">MS</span>
+                    <div
+                        class="w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-white font-bold text-2xl">OT</span>
                     </div>
-                    <h3 class="font-bold text-xl mb-2">Dr. Maria Santos</h3>
+                    <h3 class="font-bold text-xl mb-2">Oshokha Timothy</h3>
                     <p class="text-green-600 font-medium mb-3">Founder & Chief Herbalist</p>
                     <p class="text-gray-600 text-sm mb-4">
-                        With over 30 years of experience in traditional herbal medicine, Dr. Santos is a 
-                        leading authority in natural healing practices. She holds a PhD in Ethnobotany and 
+                        With over 30 years of experience in traditional herbal medicine, Oshokha Timothy is a
+                        leading authority in natural healing practices. She holds a PhD in Ethnobotany and
                         has authored numerous research papers on herbal medicine.
                     </p>
                     <div class="flex justify-center space-x-2 text-sm text-gray-500">
@@ -486,14 +361,15 @@
                 </div>
 
                 <div class="team-card rounded-2xl p-6 text-center scroll-animate">
-                    <div class="w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div
+                        class="w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-white font-bold text-2xl">JC</span>
                     </div>
                     <h3 class="font-bold text-xl mb-2">Dr. James Chen</h3>
                     <p class="text-green-600 font-medium mb-3">Research Director</p>
                     <p class="text-gray-600 text-sm mb-4">
-                        Dr. Chen leads our research and development team, ensuring all our products are 
-                        backed by rigorous scientific validation. He specializes in pharmacological research 
+                        Dr. Chen leads our research and development team, ensuring all our products are
+                        backed by rigorous scientific validation. He specializes in pharmacological research
                         and has published over 50 peer-reviewed papers.
                     </p>
                     <div class="flex justify-center space-x-2 text-sm text-gray-500">
@@ -504,14 +380,15 @@
                 </div>
 
                 <div class="team-card rounded-2xl p-6 text-center scroll-animate">
-                    <div class="w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div
+                        class="w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-white font-bold text-2xl">AR</span>
                     </div>
                     <h3 class="font-bold text-xl mb-2">Anna Rodriguez</h3>
                     <p class="text-green-600 font-medium mb-3">Quality Assurance Manager</p>
                     <p class="text-gray-600 text-sm mb-4">
-                        Anna oversees our quality assurance program, ensuring every product meets our 
-                        stringent standards. She has over 15 years of experience in quality control and 
+                        Anna oversees our quality assurance program, ensuring every product meets our
+                        stringent standards. She has over 15 years of experience in quality control and
                         is certified in GMP and organic certification standards.
                     </p>
                     <div class="flex justify-center space-x-2 text-sm text-gray-500">
@@ -546,7 +423,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white rounded-2xl p-6 scroll-animate">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mr-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mr-4">
                             <span class="text-white font-bold">SM</span>
                         </div>
                         <div>
@@ -556,14 +434,16 @@
                         </div>
                     </div>
                     <p class="font-crimson italic text-gray-700">
-                        "After years of struggling with lupus symptoms, the Turmeric Curcumin extract has been a game-changer. 
+                        "After years of struggling with lupus symptoms, the Turmeric Curcumin extract has been a
+                        game-changer.
                         My inflammation has reduced dramatically, and I finally feel like I have my life back."
                     </p>
                 </div>
 
                 <div class="bg-white rounded-2xl p-6 scroll-animate">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mr-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center mr-4">
                             <span class="text-white font-bold">MK</span>
                         </div>
                         <div>
@@ -573,14 +453,15 @@
                         </div>
                     </div>
                     <p class="font-crimson italic text-gray-700">
-                        "The combination of Turmeric and Ginger extracts has reduced my joint pain by 80%. 
+                        "The combination of Turmeric and Ginger extracts has reduced my joint pain by 80%.
                         I can now enjoy my morning walks again without constant discomfort."
                     </p>
                 </div>
 
                 <div class="bg-white rounded-2xl p-6 scroll-animate">
                     <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mr-4">
                             <span class="text-white font-bold">JL</span>
                         </div>
                         <div>
@@ -590,7 +471,7 @@
                         </div>
                     </div>
                     <p class="font-crimson italic text-gray-700">
-                        "The Cinnamon Bark extract has helped me maintain stable blood sugar levels naturally. 
+                        "The Cinnamon Bark extract has helped me maintain stable blood sugar levels naturally.
                         My doctor is impressed with my progress!"
                     </p>
                 </div>
@@ -605,16 +486,18 @@
                 Ready to Start Your Healing Journey?
             </h2>
             <p class="text-xl mb-8 max-w-3xl mx-auto">
-                Join thousands of satisfied customers who have discovered the power of natural healing. 
+                Join thousands of satisfied customers who have discovered the power of natural healing.
                 Let us help you find the perfect remedies for your health goals.
             </p>
-            
+
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="shop.html" class="bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors duration-200 inline-flex items-center justify-center">
+                <a href="shop.html"
+                    class="bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors duration-200 inline-flex items-center justify-center">
                     <i class="fas fa-shopping-cart mr-2"></i>
                     Shop Natural Remedies
                 </a>
-                <a href="contact.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-green-600 transition-colors duration-200 inline-flex items-center justify-center">
+                <a href="contact.html"
+                    class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-green-600 transition-colors duration-200 inline-flex items-center justify-center">
                     <i class="fab fa-whatsapp mr-2"></i>
                     Get Free Consultation
                 </a>
@@ -631,20 +514,24 @@
                         🌿 Natural & Curative Cure
                     </div>
                     <p class="text-gray-400 mb-4">
-                        Your trusted partner in natural healing. We provide premium herbal remedies 
+                        Your trusted partner in natural healing. We provide premium herbal remedies
                         backed by traditional wisdom and modern science.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fa-brands fa-linkedin"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
+                        <a href="https://www.facebook.com/people/Dr-Steven-Historical-Herbs/100064834728474/"
+                            class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fa-brands fa-square-x-twitter"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
@@ -672,33 +559,36 @@
             </div>
 
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Natural & Curative Cure. All rights reserved. | FDA Registered Facility | Certified Organic</p>
+                <p>&copy; 2024 Natural & Curative Cure. All rights reserved. | FDA Registered Facility | Certified
+                    Organic</p>
             </div>
         </div>
     </footer>
 
     <!-- Shopping Cart Panel -->
-    <div id="cart-panel" class="fixed top-0 right-0 h-full w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+    <div id="cart-panel"
+        class="fixed top-0 right-0 h-full w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
         <div class="p-6 border-b border-gray-200">
             <div class="flex items-center justify-between">
                 <h3 class="text-lg font-bold">Shopping Cart</h3>
-                <button onclick="document.getElementById('cart-panel').classList.add('translate-x-full')" 
-                        class="text-gray-500 hover:text-gray-700">
+                <button onclick="document.getElementById('cart-panel').classList.add('translate-x-full')"
+                    class="text-gray-500 hover:text-gray-700">
                     <i class="fas fa-times text-xl"></i>
                 </button>
             </div>
         </div>
-        
+
         <div id="cart-items" class="flex-1">
             <!-- Cart items will be populated by JavaScript -->
         </div>
-        
+
         <div class="p-6 border-t border-gray-200">
             <div class="flex items-center justify-between mb-4">
                 <span class="font-bold text-lg">Total:</span>
                 <span id="cart-total" class="font-bold text-lg text-green-600">$0.00</span>
             </div>
-            <button id="checkout-btn" class="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-bold">
+            <button id="checkout-btn"
+                class="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-bold">
                 <i class="fab fa-whatsapp mr-2"></i>
                 Checkout via WhatsApp
             </button>
@@ -707,9 +597,9 @@
 
     <!-- JavaScript -->
     <script src="main.js"></script>
-    
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Animate counters
             const counters = document.querySelectorAll('.counter');
             counters.forEach(counter => {
@@ -776,7 +666,7 @@
                 myChart.setOption(option);
 
                 // Make chart responsive
-                window.addEventListener('resize', function() {
+                window.addEventListener('resize', function () {
                     myChart.resize();
                 });
             }
@@ -801,4 +691,5 @@
         });
     </script>
 </body>
+
 </html>

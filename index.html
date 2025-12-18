@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natural & Curative Cure - Ancient Wisdom, Modern Healing</title>
-    <meta name="description" content="Premium herbal remedies for natural healing. Certified organic products for lupus, arthritis, diabetes, and more. 25+ years of trusted expertise.">
-    
+    <meta name="description"
+        content="Premium herbal remedies for natural healing. Certified organic products for lupus, arthritis, diabetes, and more. 25+ years of trusted expertise.">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Animation Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -26,216 +30,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
     <link href="https://unpkg.com/splitting@1.0.6/dist/splitting.css" rel="stylesheet">
     <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
-    
-    <style>
-        :root {
-            --forest-green: #2D5016;
-            --sage-green: #87A96B;
-            --warm-white: #FEFEFE;
-            --golden-amber: #D4A574;
-            --terracotta: #C65D07;
-            --deep-charcoal: #2C2C2C;
-            --soft-cream: #F8F6F0;
-            --muted-gold: #E6C79C;
-        }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--soft-cream);
-            color: var(--deep-charcoal);
-        }
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/index.css" rel="stylesheet">
 
-        .font-playfair {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .font-crimson {
-            font-family: 'Crimson Text', serif;
-        }
-
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(45, 80, 22, 0.8), rgba(135, 169, 107, 0.6)), 
-                        url('resources/hero-herbs.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .animate-fade-in-up {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--forest-green), var(--golden-amber));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .trust-badge {
-            background: linear-gradient(135deg, var(--golden-amber), var(--muted-gold));
-            color: var(--deep-charcoal);
-            border-radius: 50px;
-            padding: 8px 16px;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
-        }
-
-        .pulse-animation {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .product-card {
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .urgency-banner {
-            background: linear-gradient(135deg, var(--terracotta), #E67E22);
-            color: white;
-            animation: urgencyPulse 3s infinite;
-        }
-
-        @keyframes urgencyPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .stats-counter {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--forest-green);
-        }
-
-        .floating-particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s infinite linear;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .cart-badge {
-            background: var(--terracotta);
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-            position: absolute;
-            top: -8px;
-            right: -8px;
-        }
-
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: var(--golden-amber);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--golden-amber);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--forest-green), var(--sage-green));
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(45, 80, 22, 0.4);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, var(--terracotta), #E67E22);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(198, 93, 7, 0.3);
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(198, 93, 7, 0.4);
-        }
-    </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
@@ -259,14 +59,14 @@
                 <!-- Cart and Search -->
                 <div class="flex items-center space-x-4">
                     <div class="relative">
-                        <input type="text" placeholder="Search remedies..." 
-                               class="hidden md:block w-64 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <input type="text" placeholder="Search remedies..."
+                            class="hidden md:block w-64 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
                     </div>
                     <button id="cart-toggle" class="relative p-2 text-gray-700 hover:text-green-600">
                         <i class="fas fa-shopping-cart text-xl"></i>
                         <span id="cart-count" class="cart-badge hidden">0</span>
                     </button>
-                    
+
                     <!-- Mobile menu button -->
                     <button id="mobile-menu-toggle" class="md:hidden p-2 text-gray-700">
                         <i class="fas fa-bars text-xl"></i>
@@ -293,8 +93,23 @@
             <span class="font-bold">🔥 FLASH SALE: Up to 40% OFF All Herbal Remedies - Limited Time Only!</span>
             <div class="flex items-center space-x-2">
                 <span>Ends in:</span>
-                <div id="countdown" class="flex space-x-1 text-lg font-bold">
-                    <span id="hours">12</span>:<span id="minutes">34</span>:<span id="seconds">56</span>
+                <div id="countdown" class="countdown-timer">
+                    <div class="countdown-item">
+                        <span id="days" class="countdown-value">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours" class="countdown-value">00</span>
+                        <span class="countdown-label">Hrs</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes" class="countdown-value">00</span>
+                        <span class="countdown-label">Mins</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds" class="countdown-value">00</span>
+                        <span class="countdown-label">Secs</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -303,7 +118,7 @@
     <!-- Hero Section -->
     <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
         <div class="floating-particles" id="particles-container"></div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <!-- Hero Content -->
@@ -314,16 +129,16 @@
                             Certified Organic & FDA Registered
                         </div>
                     </div>
-                    
+
                     <h1 class="text-4xl md:text-6xl font-playfair font-bold text-white mb-6 leading-tight">
                         <span id="hero-text"></span>
                     </h1>
-                    
+
                     <p class="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-                        Transform your health with nature's most powerful healing herbs. 
+                        Transform your health with nature's most powerful healing herbs.
                         Trusted by <span class="counter" data-target="50000">0</span>+ satisfied customers worldwide.
                     </p>
-                    
+
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                         <a href="shop.html" class="btn-primary inline-flex items-center justify-center">
                             <i class="fas fa-shopping-cart mr-2"></i>
@@ -356,7 +171,7 @@
                 <div class="relative">
                     <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 text-white">
                         <h3 class="text-2xl font-bold mb-6 text-center">Why Choose Natural Healing?</h3>
-                        
+
                         <div class="grid grid-cols-2 gap-6">
                             <div class="text-center">
                                 <div class="stats-counter text-green-400">
@@ -386,7 +201,8 @@
 
                         <div class="mt-6 text-center">
                             <p class="text-lg font-medium mb-2">⭐⭐⭐⭐⭐</p>
-                            <p class="text-sm text-white/80">Average Rating from <span class="counter" data-target="324">0</span> Reviews</p>
+                            <p class="text-sm text-white/80">Average Rating from <span class="counter"
+                                    data-target="324">0</span> Reviews</p>
                         </div>
                     </div>
                 </div>
@@ -402,7 +218,8 @@
                     Featured Natural Remedies
                 </h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Discover our most popular herbal remedies, trusted by thousands for their powerful healing properties.
+                    Discover our most popular herbal remedies, trusted by thousands for their powerful healing
+                    properties.
                 </p>
             </div>
 
@@ -421,7 +238,8 @@
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-lg mb-2">Turmeric Curcumin Extract</h3>
-                        <p class="text-gray-600 text-sm mb-3">Premium anti-inflammatory for joint health and autoimmune support.</p>
+                        <p class="text-gray-600 text-sm mb-3">Premium anti-inflammatory for joint health and autoimmune
+                            support.</p>
                         <div class="flex items-center mb-2">
                             <div class="flex text-yellow-400">★★★★★</div>
                             <span class="text-sm text-gray-500 ml-2">(324 reviews)</span>
@@ -432,7 +250,8 @@
                                 <span class="text-sm text-gray-500 line-through ml-2">$39.99</span>
                             </div>
                         </div>
-                        <button onclick="cart.addItem(1)" class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                        <button onclick="cart.addItem(1)"
+                            class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200">
                             Add to Cart
                         </button>
                     </div>
@@ -451,7 +270,8 @@
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-lg mb-2">Korean Ginseng Root</h3>
-                        <p class="text-gray-600 text-sm mb-3">Traditional adaptogen for energy, stress resistance, and mental clarity.</p>
+                        <p class="text-gray-600 text-sm mb-3">Traditional adaptogen for energy, stress resistance, and
+                            mental clarity.</p>
                         <div class="flex items-center mb-2">
                             <div class="flex text-yellow-400">★★★★☆</div>
                             <span class="text-sm text-gray-500 ml-2">(256 reviews)</span>
@@ -462,7 +282,8 @@
                                 <span class="text-sm text-gray-500 line-through ml-2">$44.99</span>
                             </div>
                         </div>
-                        <button onclick="cart.addItem(2)" class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                        <button onclick="cart.addItem(2)"
+                            class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200">
                             Add to Cart
                         </button>
                     </div>
@@ -481,7 +302,8 @@
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-lg mb-2">Echinacea Immune Support</h3>
-                        <p class="text-gray-600 text-sm mb-3">Organic immune system booster for cold and flu prevention.</p>
+                        <p class="text-gray-600 text-sm mb-3">Organic immune system booster for cold and flu prevention.
+                        </p>
                         <div class="flex items-center mb-2">
                             <div class="flex text-yellow-400">★★★★☆</div>
                             <span class="text-sm text-gray-500 ml-2">(189 reviews)</span>
@@ -492,7 +314,8 @@
                                 <span class="text-sm text-gray-500 line-through ml-2">$32.99</span>
                             </div>
                         </div>
-                        <button onclick="cart.addItem(3)" class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                        <button onclick="cart.addItem(3)"
+                            class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200">
                             Add to Cart
                         </button>
                     </div>
@@ -511,7 +334,8 @@
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-lg mb-2">Ginkgo Biloba Extract</h3>
-                        <p class="text-gray-600 text-sm mb-3">Standardized extract for cognitive enhancement and circulation.</p>
+                        <p class="text-gray-600 text-sm mb-3">Standardized extract for cognitive enhancement and
+                            circulation.</p>
                         <div class="flex items-center mb-2">
                             <div class="flex text-yellow-400">★★★★☆</div>
                             <span class="text-sm text-gray-500 ml-2">(167 reviews)</span>
@@ -522,7 +346,8 @@
                                 <span class="text-sm text-gray-500 line-through ml-2">$28.99</span>
                             </div>
                         </div>
-                        <button onclick="cart.addItem(4)" class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                        <button onclick="cart.addItem(4)"
+                            class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200">
                             Add to Cart
                         </button>
                     </div>
@@ -557,7 +382,8 @@
                         <li class="splide__slide">
                             <div class="testimonial-card rounded-2xl p-8 mx-4">
                                 <div class="flex items-center mb-4">
-                                    <img src="resources/testimonial-1.jpg" alt="Sarah M." class="w-16 h-16 rounded-full object-cover mr-4">
+                                    <img src="resources/testimonial-1.jpg" alt="Sarah M."
+                                        class="w-16 h-16 rounded-full object-cover mr-4">
                                     <div>
                                         <h4 class="font-bold text-lg">Sarah M.</h4>
                                         <p class="text-gray-600">Lupus Warrior</p>
@@ -565,8 +391,10 @@
                                     </div>
                                 </div>
                                 <p class="font-crimson text-lg italic mb-4">
-                                    "After 3 months of using the Turmeric Curcumin extract, my joint pain has reduced by 80%. 
-                                    I finally feel like myself again and can enjoy daily activities without constant discomfort. 
+                                    "After 3 months of using the Turmeric Curcumin extract, my joint pain has reduced by
+                                    80%.
+                                    I finally feel like myself again and can enjoy daily activities without constant
+                                    discomfort.
                                     This has been a life-changing discovery!"
                                 </p>
                                 <div class="flex items-center text-sm text-gray-500">
@@ -575,11 +403,12 @@
                                 </div>
                             </div>
                         </li>
-                        
+
                         <li class="splide__slide">
                             <div class="testimonial-card rounded-2xl p-8 mx-4">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold text-xl mr-4">
+                                    <div
+                                        class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold text-xl mr-4">
                                         JM
                                     </div>
                                     <div>
@@ -589,8 +418,9 @@
                                     </div>
                                 </div>
                                 <p class="font-crimson text-lg italic mb-4">
-                                    "The Cinnamon Bark extract has helped me maintain stable blood sugar levels naturally. 
-                                    Combined with my diet changes, I've seen remarkable improvements in my A1C levels. 
+                                    "The Cinnamon Bark extract has helped me maintain stable blood sugar levels
+                                    naturally.
+                                    Combined with my diet changes, I've seen remarkable improvements in my A1C levels.
                                     Highly recommend for anyone looking for natural diabetes support."
                                 </p>
                                 <div class="flex items-center text-sm text-gray-500">
@@ -603,7 +433,8 @@
                         <li class="splide__slide">
                             <div class="testimonial-card rounded-2xl p-8 mx-4">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center text-white font-bold text-xl mr-4">
+                                    <div
+                                        class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center text-white font-bold text-xl mr-4">
                                         LR
                                     </div>
                                     <div>
@@ -613,8 +444,10 @@
                                     </div>
                                 </div>
                                 <p class="font-crimson text-lg italic mb-4">
-                                    "I've tried countless supplements for my arthritis, but the combination of Turmeric and Ginger 
-                                    extracts from Natural & Curative Cure has provided the best results. My morning stiffness is gone, 
+                                    "I've tried countless supplements for my arthritis, but the combination of Turmeric
+                                    and Ginger
+                                    extracts from Natural & Curative Cure has provided the best results. My morning
+                                    stiffness is gone,
                                     and I can finally enjoy gardening again!"
                                 </p>
                                 <div class="flex items-center text-sm text-gray-500">
@@ -634,7 +467,8 @@
                         <i class="fas fa-certificate text-green-600 text-2xl"></i>
                     </div>
                     <h3 class="font-bold text-lg mb-2">Certified Organic</h3>
-                    <p class="text-gray-600">All products are USDA certified organic and sourced from trusted growers.</p>
+                    <p class="text-gray-600">All products are USDA certified organic and sourced from trusted growers.
+                    </p>
                 </div>
 
                 <div class="text-center scroll-animate">
@@ -658,7 +492,55 @@
                         <i class="fas fa-undo text-yellow-600 text-2xl"></i>
                     </div>
                     <h3 class="font-bold text-lg mb-2">Money Back Guarantee</h3>
-                    <p class="text-gray-600">Not satisfied? Return within 30 days for a full refund. No questions asked.</p>
+                    <p class="text-gray-600">Not satisfied? Return within 30 days for a full refund. No questions asked.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Process -->
+    <section class="py-20 bg-gradient-to-br from-green-50 to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl p-8 scroll-animate">
+                <h3 class="text-2xl font-bold text-center mb-8">Our Quality Process</h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="process-step text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-search text-green-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Source Selection</h4>
+                        <p class="text-gray-600 text-sm">We partner with trusted growers who share our commitment to
+                            quality and sustainability.</p>
+                    </div>
+
+                    <div class="process-step text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-vial text-blue-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Laboratory Testing</h4>
+                        <p class="text-gray-600 text-sm">Comprehensive testing for identity, purity, heavy metals, and
+                            microbial contamination.</p>
+                    </div>
+
+                    <div class="process-step text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-cogs text-purple-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Processing</h4>
+                        <p class="text-gray-600 text-sm">Gentle processing methods that preserve the natural potency and
+                            bioactivity of herbs.</p>
+                    </div>
+
+                    <div class="process-step text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-box text-yellow-600 text-xl"></i>
+                        </div>
+                        <h4 class="font-bold mb-2">Packaging</h4>
+                        <p class="text-gray-600 text-sm">Eco-friendly packaging that protects product integrity and
+                            extends shelf life.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -671,16 +553,18 @@
                 Ready to Transform Your Health?
             </h2>
             <p class="text-xl mb-8 max-w-3xl mx-auto">
-                Join thousands of satisfied customers who have discovered the power of natural healing. 
+                Join thousands of satisfied customers who have discovered the power of natural healing.
                 Start your journey to better health today.
             </p>
-            
+
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="shop.html" class="bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors duration-200 inline-flex items-center justify-center">
+                <a href="shop.html"
+                    class="bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors duration-200 inline-flex items-center justify-center">
                     <i class="fas fa-shopping-cart mr-2"></i>
                     Shop Now - Up to 40% OFF
                 </a>
-                <a href="contact.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-green-600 transition-colors duration-200 inline-flex items-center justify-center">
+                <a href="contact.html"
+                    class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-green-600 transition-colors duration-200 inline-flex items-center justify-center">
                     <i class="fab fa-whatsapp mr-2"></i>
                     Chat with Experts
                 </a>
@@ -701,20 +585,24 @@
                         🌿 Natural & Curative Cure
                     </div>
                     <p class="text-gray-400 mb-4">
-                        Your trusted partner in natural healing. We provide premium herbal remedies 
+                        Your trusted partner in natural healing. We provide premium herbal remedies
                         backed by traditional wisdom and modern science.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fa-brands fa-linkedin"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
+                        <a href="https://www.facebook.com/people/Dr-Steven-Historical-Herbs/100064834728474/"
+                            class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                            <i class="fa-brands fa-square-x-twitter"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
@@ -742,33 +630,36 @@
             </div>
 
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Natural & Curative Cure. All rights reserved. | FDA Registered Facility | Certified Organic</p>
+                <p>&copy; 2024 Natural & Curative Cure. All rights reserved. | FDA Registered Facility | Certified
+                    Organic</p>
             </div>
         </div>
     </footer>
 
     <!-- Shopping Cart Panel -->
-    <div id="cart-panel" class="fixed top-0 right-0 h-full w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
+    <div id="cart-panel"
+        class="fixed top-0 right-0 h-full w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto">
         <div class="p-6 border-b border-gray-200">
             <div class="flex items-center justify-between">
                 <h3 class="text-lg font-bold">Shopping Cart</h3>
-                <button onclick="document.getElementById('cart-panel').classList.add('translate-x-full')" 
-                        class="text-gray-500 hover:text-gray-700">
+                <button onclick="document.getElementById('cart-panel').classList.add('translate-x-full')"
+                    class="text-gray-500 hover:text-gray-700">
                     <i class="fas fa-times text-xl"></i>
                 </button>
             </div>
         </div>
-        
+
         <div id="cart-items" class="flex-1">
             <!-- Cart items will be populated by JavaScript -->
         </div>
-        
+
         <div class="p-6 border-t border-gray-200">
             <div class="flex items-center justify-between mb-4">
                 <span class="font-bold text-lg">Total:</span>
                 <span id="cart-total" class="font-bold text-lg text-green-600">$0.00</span>
             </div>
-            <button id="checkout-btn" class="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-bold">
+            <button id="checkout-btn"
+                class="w-full bg-green-600 text-white py-3 px-4 rounded-lg hover:bg-green-700 transition-colors duration-200 font-bold">
                 <i class="fab fa-whatsapp mr-2"></i>
                 Checkout via WhatsApp
             </button>
@@ -776,7 +667,8 @@
     </div>
 
     <!-- Product Modal -->
-    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+    <div id="product-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-4xl w-full max-h-screen overflow-y-auto">
             <div id="modal-content">
                 <!-- Modal content will be populated by JavaScript -->
@@ -786,10 +678,10 @@
 
     <!-- JavaScript -->
     <script src="main.js"></script>
-    
+
     <script>
         // Initialize testimonials carousel
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             new Splide('#testimonials-carousel', {
                 type: 'loop',
                 perPage: 1,
@@ -810,13 +702,26 @@
             // Countdown timer
             function updateCountdown() {
                 const now = new Date().getTime();
-                const endTime = now + (12 * 60 * 60 * 1000) + (34 * 60 * 1000) + (56 * 1000);
-                const distance = endTime - now;
+                const targetDate = new Date('January 1, 2026 00:00:00').getTime();
+                const distance = targetDate - now;
 
+                // If the countdown is finished
+                if (distance < 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                // Calculate days, hours, minutes and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+                // Display the results
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
                 document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
                 document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
                 document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
@@ -845,4 +750,5 @@
         });
     </script>
 </body>
+
 </html>

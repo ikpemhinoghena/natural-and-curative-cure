@@ -1,0 +1,179 @@
+/* Page Specific Styles for Index */
+.hero-bg {
+    background: linear-gradient(135deg, rgba(45, 80, 22, 0.8), rgba(135, 169, 107, 0.6)),
+        url('../resources/hero-herbs.jpg');
+    /* Note: URL corrected to step out of styles dir */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.trust-badge {
+    background: linear-gradient(135deg, var(--golden-amber), var(--muted-gold));
+    color: var(--deep-charcoal);
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.urgency-banner {
+    background: linear-gradient(135deg, var(--terracotta), #E67E22);
+    color: white;
+    /* Reduced urgency animation slightly by default, but kept logic */
+    animation: urgencyPulse 3s infinite;
+}
+
+@keyframes urgencyPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stats-counter {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--forest-green);
+}
+
+.floating-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--terracotta), #E67E22);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(198, 93, 7, 0.3);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(198, 93, 7, 0.4);
+}
+
+/* Countdown Styles */
+.countdown-timer {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 70px;
+}
+
+.countdown-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    margin-top: 0.25rem;
+}
+
+@media (max-width: 640px) {
+    .countdown-timer {
+        gap: 0.75rem;
+    }
+
+    .countdown-item {
+        min-width: 55px;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .countdown-value {
+        font-size: 1.25rem;
+    }
+
+    .countdown-label {
+        font-size: 0.6rem;
+    }
+}
